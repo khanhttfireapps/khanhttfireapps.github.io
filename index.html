@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
+    <script type="text/javascript" src="bundle.min.js"></script>
     <script>
       var options = {
         // ID of dom element which contains canvas
@@ -164,7 +165,13 @@
           },
         ],
       };
+
+      let game = new Wheel(WheelOptions);
+
+      setTimeout(() => {
+        game.play();
+      }, 1000);
     </script>
     <div id="game"></div>
-  <script type="text/javascript" src="bundle.min.js"></script></body>
+    </body>
 </html>
