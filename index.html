@@ -5,26 +5,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    <script type="text/javascript" src="bundle.min.js"></script>
+    <script type="text/javascript" src="wheel.min.js"></script>
     <script>
       var options = {
         // ID of dom element which contains canvas
         parent: 'game',
 
         // wheel radius, in pixels
-        wheelRadius: 200,
+        wheelRadius: 198,
 
         // color of stroke lines
-        strokeColor: 0x0000000,
+        strokeColor: 0xFF00000,
 
         // width of stroke lines
-        strokeWidth: 0,
+        strokeWidth: 2,
 
+        // first slice angle
+        initAngle: 30,
+
+        // game result
         result: {
           index: 8,
           text: '#10OFF',
         },
 
+        // callback function when game ending
         onComplete: () => {
           console.log('done');
         },
@@ -32,7 +37,7 @@
         // slices configuration
         slices: [
           {
-            degrees: 30,
+            angle: 30,
             color: '#454F5B',
             label: "Space 1",
             labelStyle: {
@@ -43,7 +48,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#B5BDC4',
             label: "Space 2",
             labelStyle: {
@@ -54,7 +59,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#454F5B',
             label: "Space 3",
             labelStyle: {
@@ -65,7 +70,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#B5BDC4',
             label: "Space 4",
             labelStyle: {
@@ -76,7 +81,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#454F5B',
             label: "Space 5",
             labelStyle: {
@@ -87,7 +92,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#B5BDC4',
             label: "Space 6",
             labelStyle: {
@@ -98,7 +103,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#454F5B',
             label: "Space 7",
             labelStyle: {
@@ -109,7 +114,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#B5BDC4',
             label: "Space 8",
             labelStyle: {
@@ -120,7 +125,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#454F5B',
             label: "Space 9",
             labelStyle: {
@@ -131,7 +136,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#B5BDC4',
             label: "Space 10",
             labelStyle: {
@@ -142,7 +147,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#454F5B',
             label: "Space 11",
             labelStyle: {
@@ -153,7 +158,7 @@
             }
           },
           {
-            degrees: 30,
+            angle: 30,
             color: '#B5BDC4',
             label: "Space 12",
             labelStyle: {
@@ -166,9 +171,11 @@
         ],
       };
 
-      let game = new Wheel(options);
+      var game = new Wheel(options);
 
       setTimeout(() => {
+        game.setStopIndex(8);
+
         game.play();
       }, 1000);
     </script>
