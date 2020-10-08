@@ -244,11 +244,12 @@
         ],
       };
 
-      //var game = new Wheel(wheelOptions);
-      var game = new LuckyBoxes(LuckyBoxesOptions);
+      var game = new Wheel(wheelOptions);
+      // var game = new LuckyBoxes(LuckyBoxesOptions);
 
       setTimeout(() => {
-        game.setResult('You Win: #20OFF');
+        game.setResult(3);
+        // game.setResult('You Win: #20OFF');
 
         game.play();
       }, 1000);
