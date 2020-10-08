@@ -7,7 +7,7 @@
   <body>
     <script type="text/javascript" src="wheel.min.js"></script>
     <script>
-      var options = {
+      var wheelOptions = {
         // ID of dom element which contains canvas
         parent: 'game',
 
@@ -170,11 +170,80 @@
           },
         ],
       };
+      
+      var LuckyBoxesOptions = {
+        // ID of dom element which contains canvas
+  parent: 'game',
 
-      var game = new Wheel(options);
+  // box width when zoom in
+  boxWidth: 300,
+
+  // box height when zoom in
+  boxHeight: 210,
+
+  // game background color
+  backgroundColor: 'rgba(231, 76, 60, 0)',
+
+  // game result
+  result: {
+    text: '#10OFF',
+  },
+
+  // callback function when game ending
+  onComplete: () => {
+    console.log('done');
+  },
+
+  textStyle: {
+    fontFamily: 'Roboto',
+    fontSize: '32px',
+    fontStyle: 'bold',
+    color: '#000000',
+    resolution: 2,
+  },
+
+  // boxes configuration
+  boxes: [
+    {
+      boxColor: '#34495E',
+      ribbonColor: '#FDC56D',
+      shadowColor: '#000000',
+      bowColor: '#FDC56D',
+    },
+    {
+      boxColor: '#34495E',
+      ribbonColor: '#FDC56D',
+      shadowColor: '#000000',
+      bowColor: '#FDC56D',
+    },
+    {
+      boxColor: '#34495E',
+      ribbonColor: '#FDC56D',
+      shadowColor: '#000000',
+      bowColor: '#FDC56D',
+    },
+    {
+      boxColor: '#34495E',
+      ribbonColor: '#FDC56D',
+      shadowColor: '#000000',
+      bowColor: '#FDC56D',
+    },
+    {
+      boxColor: '#34495E',
+      ribbonColor: '#FDC56D',
+      shadowColor: '#000000',
+      bowColor: '#FDC56D',
+    },
+  ],
+      };
+
+      //var game = new Wheel(wheelOptions);
+      var game = new LuckyBoxes(LuckyBoxesOptions);
 
       setTimeout(() => {
-        game.setStopIndex(8);
+        game.setResult({
+          text: 'You Win: #20OFF',
+        });
 
         game.play();
       }, 1000);
