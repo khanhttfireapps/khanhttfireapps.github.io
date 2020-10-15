@@ -26,6 +26,9 @@
 
         // width of stroke lines
         strokeWidth: 2,
+        
+        // play button background color
+        playButtonBackgroundColor: 0xFFFFFF,
 
         // first slice angle
         initAngle: 0,
@@ -45,6 +48,10 @@
         // callback function when game ending
         onComplete: () => {
           console.log('done');
+        },
+        
+        onInteraction: () => {
+          console.log('interaction');
         },
 
         // slices configuration
