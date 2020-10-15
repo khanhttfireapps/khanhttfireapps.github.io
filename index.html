@@ -250,14 +250,28 @@
         ],
       };
 
-      // var game = new Wheel(wheelOptions);
-      var game = new LuckyBoxes(LuckyBoxesOptions);
+      var game = new Wheel(wheelOptions);
+      // var game = new LuckyBoxes(LuckyBoxesOptions);
+      
+      setTimeout(() => {
+        WheelOptions.onInteraction = () => {
+          game.play();
+        };
+
+        game.updateConfig(WheelOptions);
+
+        // LuckyBoxesOptions.onComplete = () => {
+        //   alert('done');
+        // };
+
+        // game.updateConfig(LuckyBoxesOptions);
+      }, 100);
 
       setTimeout(() => {
         // game.setResult(3);
         game.setResult('#20OFF');
 
-        game.play();
+        // game.play();
       }, 1000);
     </script>
     <div id="game"></div>
