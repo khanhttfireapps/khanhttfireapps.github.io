@@ -191,7 +191,7 @@
         ],
       };
       
-      var LuckyBoxesOptions = {
+      var luckyBoxesOptions = {
         // ID of dom element which contains canvas
         parent: 'game',
 
@@ -258,25 +258,25 @@
       };
 
       var game = new Wheel(wheelOptions);
-      // var game = new LuckyBoxes(LuckyBoxesOptions);
+      // var game = new LuckyBoxes(luckyBoxesOptions);
       
       setTimeout(() => {
-        WheelOptions.onInteraction = () => {
+        wheelOptions.onInteraction = () => {
           game.play();
         };
 
-        game.updateConfig(WheelOptions);
+        game.updateConfig(wheelOptions);
 
-        // LuckyBoxesOptions.onComplete = () => {
+        // luckyBoxesOptions.onComplete = () => {
         //   alert('done');
         // };
 
-        // game.updateConfig(LuckyBoxesOptions);
+        // game.updateConfig(luckyBoxesOptions);
       }, 100);
 
       setTimeout(() => {
-        // game.setResult(3);
-        game.setResult('#20OFF');
+        game.setResult(5);
+        // game.setResult('#20OFF');
 
         // game.play();
       }, 1000);
